@@ -1,1 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flores Amarillas - SVG</title>
+  <style>
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      margin:0;
+      background: linear-gradient(#eaf6ff, #fff8d6);
+      font-family: Arial, sans-serif;
+    }
+    .jardin{ width:720px; }
+    svg{ width:100%; height:auto; display:block; }
+    .etiqueta{
+      text-align:center;
+      margin-top:12px;
+      color:#6b5b00;
+      font-weight:600;
+    }
+  </style>
+</head>
+<body>
+  <div class="jardin">
+    <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-label="Campo de flores amarillas">
+      <!-- Suelo -->
+      <rect x="0" y="320" width="800" height="80" fill="#6aa84f" />
+      <!-- Definición de pétalo reutilizable -->
+      <defs>
+        <g id="petalo">
+          <path d="M0 0 C30 -60 70 -60 100 0 C70 -10 30 -10 0 0Z" />
+        </g>
+        <filter id="sombra" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <!-- Flor 1 -->
+      <g transform="translate(150,230)" filter="url(#sombra)">
+        <!-- tallo -->
+        <rect x="-4" y="0" width="8" height="120" fill="#2e7d32" rx="4"/>
+        <!-- hojas -->
+        <path d="M0 80 C-50 60 -80 100 -30 110 C-60 95 -30 85 0 80Z" fill="#2e7d32" />
+        <path d="M8 100 C50 85 80 115 30 125 C60 110 30 100 8 100Z" fill="#2e7d32" />
+        <!-- pétalos: naranja-amarillo degradado -->
+        <g transform="translate(0,-20)">
+          <defs>
+            <radialGradient id="grad1" cx="50%" cy="30%">
+              <stop offset="0%" stop-color="#fff59d"/>
+              <stop offset="60%" stop-color="#ffd54f"/>
+              <stop offset="100%" stop-color="#f9a825"/>
+            </radialGradient>
+          </defs>
+          <!-- 8 pétalos -->
+          <g fill="url(#grad1)" stroke="#dd9b00" stroke-width="1">
+            <use href="#petalo" transform="rotate(0) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(45) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(90) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(135) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(180) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(225) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(270) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(315) translate(-50,-10)"/>
+          </g>
+          <!-- centro -->
+          <circle cx="0" cy="-20" r="22" fill="#6d4c41" stroke="#3e2723" stroke-width="2"/>
+        </g>
+      </g>
+
+      <!-- Flor 2 (más pequeña) -->
+      <g transform="translate(360,250) scale(0.75)" filter="url(#sombra)">
+        <rect x="-4" y="0" width="6" height="110" fill="#2e7d32" rx="4"/>
+        <defs>
+          <radialGradient id="grad2" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#fffde7"/>
+            <stop offset="70%" stop-color="#ffe082"/>
+            <stop offset="100%" stop-color="#ffb300"/>
+          </radialGradient>
+        </defs>
+        <g transform="translate(0,-20)">
+          <g fill="url(#grad2)" stroke="#d48b00" stroke-width="0.9">
+            <use href="#petalo" transform="rotate(0) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(45) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(90) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(135) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(180) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(225) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(270) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(315) translate(-50,-10)"/>
+          </g>
+          <circle cx="0" cy="-20" r="16" fill="#5d4037" stroke="#3e2723" stroke-width="1.5"/>
+        </g>
+      </g>
+
+      <!-- Flor 3 (a la derecha) -->
+      <g transform="translate(580,220) scale(1.1)" filter="url(#sombra)">
+        <rect x="-4" y="0" width="9" height="135" fill="#2e7d32" rx="4"/>
+        <g transform="translate(0,-20)">
+          <g fill="url(#grad1)" stroke="#dd9b00" stroke-width="1">
+            <use href="#petalo" transform="rotate(0) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(40) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(80) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(120) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(160) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(200) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(240) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(280) translate(-50,-10)"/>
+            <use href="#petalo" transform="rotate(320) translate(-50,-10)"/>
+          </g>
+          <circle cx="0" cy="-20" r="24" fill="#5d4037" stroke="#3e2723" stroke-width="2"/>
+        </g>
+      </g>
+
+    </svg>
+    <div class="etiqueta">Campo de flores amarillas</div>
+  </div>
+</body>
+</html>
 
